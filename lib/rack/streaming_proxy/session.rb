@@ -11,7 +11,7 @@ class Rack::StreamingProxy::Session
 
   # Returns a Rack::StreamingProxy::Response
   def start
-    @piper = Servolux::Piper.new 'r', timeout: 30
+    @piper = Servolux::Piper.new 'r', timeout: 180
     @piper.child  { child }
     @piper.parent { parent }
   end
